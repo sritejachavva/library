@@ -12,8 +12,20 @@
 <body>
     <header>
         <img class="logo" width="500px" height="100px" src = "./assets/random.svg" alt="random incorporated"/>
-        <button> Log In </button>
+        <button class = "login"> Log In </button>
     </header>
-    
+
+    <form>
+        <label for="bookname">book name:</label><br>
+        <input type="text" id="bookname" name="bookname"><br>
+        <label for="pages">pages</label><br>
+        <input type="number" id="pages" name="pages"><br>
+        <label for="readit">read it</label><br>
+        <input type="radio" id="readit" name="readit"><br>
+        <button class="add_book">Add Book</button>
+    </form>
+    <div class = "book-grid">
+
+    </div>
 </body>
 </html>

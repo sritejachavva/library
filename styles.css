@@ -7,3 +7,14 @@ header{
     margin-left: auto;
     margin-right: auto;
 }
+
+.login {
+    height: 10%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 1em;
+}
+
+button.add_book{
+    color:black;
+}
