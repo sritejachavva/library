@@ -9,6 +9,7 @@ let bookname = document.body.querySelector("#bookname");
 let pages = document.body.querySelector("#pages");
 let readit = document.body.querySelector("#readit");
 let book_card = document.createElement("div");
+book_card.setAttribute('class', 'book_card');
 let book_title = document.createElement("h1");
 let book_greed = document.querySelector(".book-grid")
 book_title.setAttribute('class', 'read_block');
@@ -40,18 +41,18 @@ function Book(title, pages, read_it) {
 function addCardToGrid(bookname, pages, read){
 
     let book_card_clone = book_card.cloneNode(true);
-    book_card_clone.setAttribute('id', '`card_${bookname}`');
+    book_card_clone.setAttribute('id', `card_${bookname}`);
 
     let book_title_clone = book_title.cloneNode(true);
-    book_title_clone.setAttribute('id', '`title_${bookname}`');
+    book_title_clone.setAttribute('id', `title_${bookname}`);
     book_title_clone.innerHTML += (bookname);
 
     let book_pages_clone = book_pages.cloneNode(true);
-    book_pages_clone.setAttribute('id', '`pages_${bookname}`');
+    book_pages_clone.setAttribute('id', `pages_${bookname}`);
     book_pages_clone.innerHTML += (pages);
 
     let book_read_clone = read_block.cloneNode(true);
-    book_read_clone.setAttribute('id', '`read_${bookname}`');
+    book_read_clone.setAttribute('id', `read_${bookname}`);
 
     book_card_clone.appendChild(book_title_clone);
     book_card_clone.appendChild(book_pages_clone);
