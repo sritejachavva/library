@@ -1,5 +1,3 @@
-const myLibrary = [];
-
 
 let add_book_button = document.body.querySelector("button.add_book");
 let bookname = document.body.querySelector("#bookname");
@@ -15,6 +13,7 @@ function Book(title, pages, read_it) {
   this.pages = pages;
   this.read_it = read_it;
 
+    return this;
 }
 
 function readInputValues(){
@@ -24,8 +23,9 @@ function readInputValues(){
 }
 
 function addBookToLibrary() {
-    
-    console.log(bookname.value);
+
+    list_of_books.push(new Book(bookname.value, pages.value, readit.checked));
+    console.log(list_of_books);
     return false;
 }
 
