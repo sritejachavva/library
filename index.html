@@ -15,14 +15,15 @@
         <button class = "login"> Log In </button>
     </header>
 
-    <form>
+    <form name="add_book" onsubmit="return addBookToLibrary()">
         <label for="bookname">book name:</label><br>
         <input type="text" id="bookname" name="bookname"><br>
         <label for="pages">pages</label><br>
         <input type="number" id="pages" name="pages"><br>
         <label for="readit">read it</label><br>
         <input type="radio" id="readit" name="readit"><br>
-        <button class="add_book">Add Book</button>
+        <input type="submit" value="Submit">
+        <!--<button class="add_book">Add Book</button> -->
     </form>
     <div class = "book-grid">
 
