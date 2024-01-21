@@ -18,3 +18,12 @@ header{
 button.add_book{
     color:black;
 }
+
+.book-grid {
+    display: grid;
+    row-gap: 50px;
+    grid-template-columns: 60px 60px 60px;
+    grid-template-rows: auto;
+  }
+  
+  
