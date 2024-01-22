@@ -18,10 +18,8 @@ book_pages.setAttribute('class', 'book_pages');
 var read_block = document.createElement('div');
 read_block.setAttribute('class', 'read_block');
 read_block.innerHTML = `
-    <div class="button-group">
-        <button class="btn btn-light-green">Read</button>
-        <button class="btn">Remove</button>
-    </div>`;
+        <input type="checkbox" class = "read_checkbox">
+        <p>Read</p>`;
 
 let book_read_it = document.createElement("div");
 
@@ -37,6 +35,8 @@ function Book(title, pages, read_it) {
 
     return this;
 }
+
+
 
 function addCardToGrid(bookname, pages, read){
 
@@ -54,12 +54,20 @@ function addCardToGrid(bookname, pages, read){
     let book_read_clone = read_block.cloneNode(true);
     book_read_clone.setAttribute('id', `read_${bookname}`);
 
+    let book_read_checkbox_clone = book_read_clone.firstElementChild;
+    book_read_checkbox_clone.setAttribute('id', `read_checkbox_${bookname}`);
+
+
     book_card_clone.appendChild(book_title_clone);
     book_card_clone.appendChild(book_pages_clone);
     book_card_clone.appendChild(book_read_clone);
 
     book_greed.appendChild(book_card_clone);
 
+
+    let book_read_checkbox_clone_post = document.getElementById(`read_checkbox_${bookname}`);
+    console.log(book_read_checkbox_clone_post);
+    book_read_checkbox_clone_post.addEventListener('click', read_check);
 
 
 }
@@ -68,10 +76,22 @@ function addCardToGrid(bookname, pages, read){
 function addBookToLibrary() {    
     list_of_books.push(new Book(bookname.value, pages.value, readit.checked));
     addCardToGrid(bookname.value, pages.value, readit.checked)
-    console.log(list_of_books);
     return false;
 }
 
 
+function read_check( book_card_clone){
+
+    if (this.checked == true){
+        console.log("checked");
+        this.parentNode.parentNode.classList.add("read")
+    }
+    else {
+        console.log("unchecked");
+        this.parentNode.parentNode.classList.remove("read")
+    }
+
+
+}
 
 //add_book_button.addEventListener('click', addBookToLibrary);

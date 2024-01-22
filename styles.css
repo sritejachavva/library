@@ -1,6 +1,6 @@
 header{
     display: flex;
-    background-color: lightblue;
+    background-color: pink;
 }
 .logo {
     left: 50%;
@@ -45,6 +45,14 @@ button.add_book{
 }
 
 .read {
-    background-color: lightgreen;
+    background-color: lightgreen !important;
+}
+
+.read_block > p,input {
+    display:inline-flex;
+}
+  
+.read_block p {
+    display:inline-flex;
 }
   
